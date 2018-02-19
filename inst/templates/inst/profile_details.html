@@ -1,0 +1,34 @@
+{% extends 'inst/base.html' %}
+
+
+<!--
+        <h1>Your Photos:</h1>
+        {% for photo in photos %}
+            <li>
+                <div class="shot"><img src="{{ photo.photo.url }}" width="154px"/></div>
+            </li>
+        {% empty %}
+            <li>No photos have been added yet</li>
+        {% endfor %}
+
+<h1><a href="{% url 'inst:index' %}">Nothing</a></h1>
+-->
+{% block content %}
+
+    <h1>Your photos:</h1>
+    <div class="container">
+        <div class="row">
+            {% for photo in photos %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <div class="shot"><img class="img-responsive" src="{{ photo.photo.url }}" width="293px" height="293px" alt="lights"
+                                               style="width: 100%"/></div>
+                        <div class="caption"></div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
