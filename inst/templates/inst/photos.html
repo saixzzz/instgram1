@@ -1,0 +1,34 @@
+{% extends 'inst/base.html' %}
+{% block title %}
+<title>Photos</title>
+{% endblock %}
+{% block content %}
+
+    <!--
+    <div class="container">
+        <div class="row">
+        <h3>All photos:</h3>
+            {% for i in photos %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+
+                        <div class="shot"><img class="img-responsive" src="" width="
+        " height="" alt=""
+                                               style="width: 100%"/></div>
+                        <div class="caption"></div>
+
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+-->
+    <section>
+        <div class="container" align="center">
+            {% for i in images %}
+                    <img class="photo" src="{{ i.photo }}">
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

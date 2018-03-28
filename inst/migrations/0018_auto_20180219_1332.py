@@ -16,12 +16,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='photos',
             name='photo',
-            field=models.ImageField(blank=True, upload_to=inst.models.get_path_and_name),
+            field=models.ImageField(blank=True, upload_to=inst.models.get_name_and_path),
         ),
         migrations.AlterField(
             model_name='usersettings',
             name='avatar',
-            field=models.ImageField(blank=True, default='Default-image.jpeg', upload_to=inst.models.get_path_and_name),
+            field=models.ImageField(blank=True, default='Default-image.jpeg', upload_to=inst.models.get_name_and_path),
         ),
         migrations.AlterField(
             model_name='usersettings',

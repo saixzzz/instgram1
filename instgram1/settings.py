@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'inst',
     'users',
     'bootstrap3',
-    #'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'instgram1.urls'
+
 
 TEMPLATES = [
     {
@@ -83,7 +82,16 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 """
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 
 DATABASES = {
     'default': {
@@ -133,12 +141,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'inst/static')
 
 # Settings for django-bootstrap3
 
 BOOTSTRAP3 = {
-    'include_jquery': True,
+    'include_jquery': True
 }
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/photos')
+MEDIA_URL = '/media/photos/'

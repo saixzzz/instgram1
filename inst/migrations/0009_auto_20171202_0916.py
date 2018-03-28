@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='photos',
             name='photo',
-            field=models.ImageField(default=1, upload_to=inst.models.get_path_and_name),
+            field=models.ImageField(default=1, upload_to=inst.models.get_name_and_path),
             preserve_default=False,
         ),
     ]

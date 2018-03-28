@@ -1,0 +1,67 @@
+section {
+	background-color: #fafafa;
+}
+
+.backname {
+	position: relative;
+	font-family: 'Lobster', cursive;
+	font-size: 90px;
+	opacity: 0.1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.frontname {
+	font-family: 'Lobster', cursive;
+	font-size: 36px;
+	padding-top: 0px;
+	position: absolute;
+	display: block;
+	left: 250px;
+	top: 57px;
+}
+
+.absolute-center {
+	width: 50%;
+	height: 50%;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top :0; left: 0; bottom: 0; right: 0;
+}
+
+label {
+	text-align: center
+}
+
+.form-control {
+	border-radius: 15px;
+	width: 500px;
+	margin-left: 110px;
+}
+
+.btn-default {
+	border-radius: 15px;
+	width: 500px;
+	margin-left: 110px;
+
+}
+
+.button {
+  background: linear-gradient(to right, #fcb045, #fcb045, #fcb045, #551A8B);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 20px;
+  padding: 1px;
+  text-decoration: none;
+  width: 500px;
+  margin-left: 110px;
+}
+.button span {
+  background: #fff;
+  display: block;
+  border-radius: 15px;
+
+}
+

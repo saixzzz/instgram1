@@ -1,56 +1,47 @@
-{% load bootstrap3 %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load staticfiles %}
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    {% block title %}
+    <title></title>
+    {% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/login.css">
 </head>
-
 <body>
-<!-- Static navbar -->
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-            </button>
-            <a class="navbar-brand" href="{% url 'inst:index' %}">Fakestagram</a>
+<header>
+    <nav class="nav navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url "inst:index" %}"><img src="/static/img/logo.png" alt="Fakestagram"></a>
+            </div>
+
+            <div class="navbar-collaps collaps">
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href=""><img src="/static/img/compas-icon.png"></a></li>
+                        <li><a href="#"><img src="/static/img/like-icon.png"></a></li>
+                        <li><a href="{% url "inst:profile" %}"><img src="/static/img/profile-icon.png"></a></li>
+                        <li><a href="{% url "inst:upload" %}"><img src="/static/img/upload-icon.png"></a></li>
+                    {% else %}
+                        <li><a href="{% url 'users:register' %}"><span class="glyphicon glyphicon-register"></span>SignUp</a>
+                        </li>
+                        <li><a href="{% url 'users:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+
         </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-
-
-            <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'inst:settings' %}">Hello, {{ user.username.title }}.</a></li>
-                    <li><a href="{% url 'users:logout' %}">log out</a></li>
-                {% else %}
-                    <li><a href="{% url 'users:register' %}">sign up</a></li>
-                    <li><a href="{% url 'users:login' %}">log in</a></li>
-                {% endif %}
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-<div class="container">
-
-    <div class="page-header">
-        {% block header %}{% endblock header %}
-    </div>
-    <div>
-        {% block content %}{% endblock content %}
-    </div>
-
-</div> <!-- /container -->
+    </nav>
+</header>
+{% block content %}{% endblock %}
 </body>
 </html>
