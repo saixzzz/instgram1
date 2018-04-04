@@ -5,15 +5,21 @@
     <h2>Log in to your account.</h2>
 {% endblock header %}
 
-<div class="container">
-    {% block content %}
-        <form method="post" action="{% url 'users:login' %}" class="form">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            {% buttons %}
-                <button name="submit" class="btn btn-primary">log in</button>
-            {% endbuttons %}
-            <input type="hidden" name="next" value="{% url 'inst:index' %}"/>
-        </form>
-    {% endblock content %}
-</div>
+{% block content %}
+<section>
+	<div class="container">
+		<div class="absolute-center">
+			<div class="backname" align="center">Fakestagram</div>
+			<div class="frontname" align="center">Fakestagram</div>
+			<form action="{% url "users:login" %}" method="post">
+                {% csrf_token %}
+			    <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+			    <button type="submit" class="button"><span>Login</span></button>
+  			</form>
+
+		</div>
+		</div>
+</section>
+{% endblock %}

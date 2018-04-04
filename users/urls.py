@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     # Login page
-    url(r'^login/$', login, {'template_name': 'users/login.html'}, name='login'),
+    url(r'^login/$', views.login_view, name='login'),
 
     # Logout page
     url(r'^logout/$', views.logout_view, name='logout'),
@@ -13,6 +13,5 @@ urlpatterns = [
     # Registration page
     url(r'^register/$', views.register, name='register'),
 
-    # url(r'^(?P<username>[\w]+)$', views.ProfileView.as_view(), name='profile')
 
 ]

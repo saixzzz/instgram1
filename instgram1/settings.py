@@ -143,12 +143,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'inst/static')
 
+
+MEDIA_URL = '/media/photos/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/photos/')
+
 # Settings for django-bootstrap3
 
 BOOTSTRAP3 = {
     'include_jquery': True
 }
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/photos')
-MEDIA_URL = '/media/photos/'

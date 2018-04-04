@@ -1,133 +1,100 @@
 {% extends 'inst/base.html' %}
 {% load staticfiles %}
 {% block content %}
-    <!--
-    <div class="container">
-        <div class="row2">
-            <div class="string">
-                <div class="col-md-5 pull-right col-md-offset-3 ">
+    <body>
+    <section>
+        <hr>
+        <div class="container">
+            {% for usersettings in setting %}
+                <img src="/media/photos/avatar/{{ usersettings.avatar.name }}" class="img-circle center">
+                <h4 class="login">@{{ user.username }}</h4>
+                <div id="prof" align="center">
+                    <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
+                        profile</p></a>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-                    <div class="panel-heading"></div>
-                    {% for usersettings in setting %}
-                        <div class="panel-body">
-                        <div class="row">
-                        <div class="col-md-3 col-lg-3 " align="center"><img alt="User Pic"
-                                                                            src="{{ usersettings.avatar.url }}"
-                                                                            class="img-responsive"></div>
-                        <div class=" col-md-9 col-lg-9 ">
-                        <table class="table table-striped table-user-information">
-                            <tbody>
-                            <div>
-                                <tr>
-                                    <td>Login:</td>
-                                    <td>{{ usersettings.user }}</td>
-                                </tr>
-                            </div>
-
-                            <div>
-                                <tr>
-                                    <td>Name:</td>
-                                    <td>{{ usersettings.name }}</td>
-                                </tr>
-                            </div>
-
-                            <div>
-                                <tr>
-                                    <td>Web Site:</td>
-                                    <td>{{ usersettings.web_site }}</td>
-                                </tr>
-                            </div>
-
-                            <div>
-                                <tr>
-                                    <td>Bio:</td>
-                                    <td>{{ usersettings.bio }}</td>
-                                </tr>
-                            </div>
-
-                            <div>
-                                <tr>
-                                    <td>Phone Number</td>
-                                    <td>{{ usersettings.phone_number }}</td>
-                                </tr>
-                            </div>
-                            </tbody>
-                        </table>
-                    {% endfor %}
-                    </div>
-                    </div>
-                    <a class="btn btn-primary" href="{% url 'inst:avatar' %}">Upload new avatar</a>
-                    <a class="btn btn-primary" href="{% url 'inst:settings_edit' %}">Edit Profile</a>
-
-                    </div>
+                <ul class="list-inline">
+                    <li><b>9</b> posts</li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li><b>150</b> following</li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li><b>200</b> subscribed</li>
+                </ul>
+                <hr>
+                <p class="name" align="center">{{ usersettings.name }}</p>
+                <div align="center">
+                    <a class="web-site" href="//{{ usersettings.web_site }}">{{ usersettings.web_site }}</a>
+                    <p class="bio" align="center">{{ usersettings.bio }}</p>
+                    <hr>
                 </div>
-            </div>
+            {% empty %}
+                <h4 class="login">@{{ user.username }}</h4>
+                <div id="prof" align="center">
+                    <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
+                        profile</p></a>
+                </div>
+                <ul class="list-inline">
+                    <li><b>9</b> posts</li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li><b>150</b> following</li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li><b>200</b> subscribed</li>
+                </ul>
+                <hr>
+                <p class="name" align="center"></p>
+                <div align="center">
+                    <a class="web-site" href="//"></a>
+                    <p class="bio" align="center"></p>
+                    <hr>
+                </div>
+            {% endfor %}
         </div>
-    </div>
-    -->
-
-
-
-  <body>
-  <section>
-    <hr>
-  	<div class="container">
-        {% for usersettings in setting %}
-      <img src="{{ usersettings.avatar.url }}" class="img-circle center">
-      <h4 class="login">@login </h4>
-      <div id="prof" align="center">
-        <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your profile</p></a>
-      </div>
-        <ul class="list-inline">
-          <li><b>9</b> posts</li>
-          <li><spacer type="horizontal" size="60"></spacer></li>
-          <li><spacer type="horizontal" size="60"></spacer></li>
-          <li><spacer type="horizontal" size="60"></spacer></li>
-          <li><b>150</b> following</li>
-          <li><spacer type="horizontal" size="60"></spacer></li>
-          <li><spacer type="horizontal" size="60"></spacer></li>
-          <li><spacer type="horizontal" size="60"></spacer></li>
-          <li><b>200</b> subscribed</li>
-        </ul>
+    </section>
+    <section>
+        <div class="container" align="center">
+            {% for image in images %}
+                <span class="photo-span"><img class="photo" src="/media/photos/crop_x1/{{ image.photo.name }}"></span>
+            {% endfor %}
+        </div>
         <hr>
-        <p class="name" align="center">{{ usersettings.name }}</p>
-        <div align="center">
-        <a class="web-site" href="{{ usersettings.web_site }}">{{ usersettings.web_site }}</a>
-        <p class="bio" align="center">{{ usersettings.bio }}</p>
-        <hr>
-      </div>
-        {% endfor %}
-    </div>
-  </section>
-  <section>
-  	<div class="container" align="center">
-      <span class="photo-span">
-        <img class="photo" src="img/picture1.png">
-      </span>
-      <span class="photo-span">
-        <img class="photo" src="img/picture1.png">
-      </span>
-      <span  class="photo-span">
-        <img class="photo" src="img/picture1.png">
-      </span>
-      <span class="photo-span">
-        <img class="photo" src="img/picture1.png">
-      </span>
-      <span class="photo-span">
-        <img class="photo" src="img/picture1.png">
-      </span>
-      <span class="photo-span">
-        <img class="photo" src="img/picture1.png">
-      </span>
-  		</div>
-  </section>
-  <footer>
-  	<div class="container" align="center">
-      <p class="footer">&copy; Desiged and produced by Zalupa productions</p>
-  		</div>
-  </footer>
-</div>
-  </body>
-</html>
+    </section>
+
+    <footer style="margin: 10px; color: #898989">
+        <div class="container" align="center">
+            <p class="footer">© Desiged and Produced by Sergio and Michael</p>
+        </div>
+    </footer>
+    </body>
+    </html>
 {% endblock content %}

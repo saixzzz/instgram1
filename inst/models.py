@@ -14,7 +14,7 @@ def get_name_and_path(path):
 
 class Photos(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='crop_x1', blank=True)
+    photo = models.ImageField(upload_to='', blank=True, default='Png.png')
     # comment = models.CharField(max_length=50, blank=True)
     # like = models.BooleanField
 

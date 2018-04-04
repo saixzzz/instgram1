@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     {% block title %}
-    <title></title>
+        <title></title>
     {% endblock %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,6 +30,8 @@
                         <li><a href="#"><img src="/static/img/like-icon.png"></a></li>
                         <li><a href="{% url "inst:profile" %}"><img src="/static/img/profile-icon.png"></a></li>
                         <li><a href="{% url "inst:upload" %}"><img src="/static/img/upload-icon.png"></a></li>
+                        <li><a href="{% url "users:logout" %}"><span class="glyphicon glyphicon-log-out"></span></a>
+                        </li>
                     {% else %}
                         <li><a href="{% url 'users:register' %}"><span class="glyphicon glyphicon-register"></span>SignUp</a>
                         </li>
