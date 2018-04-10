@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
-from django.template import RequestContext
-from django.shortcuts import render_to_response,redirect
-from django.contrib.auth import logout, login, authenticate
+from django.shortcuts import redirect, render
+from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import LoginForm, SignUpForm
+from django.contrib.auth.forms import PasswordChangeForm
+from .forms import LoginForm, SignUpForm, PasswordForm
+from django.contrib import messages
 
 
 def logout_view(request):
@@ -27,7 +25,7 @@ def login_view(request):
             return redirect('inst:index')
     else:
         form = LoginForm()
-    return render(request, 'users/login.html', {'form':form})
+    return render(request, 'users/login.html', {'form': form})
 
 
 def register(request):
@@ -41,22 +39,18 @@ def register(request):
     else:
         form = SignUpForm()
     return render(request, 'users/register.html', {'form': form})
-"""
-def register(request):
-    if request.method != 'POST':
-        # Display blank registration form
-        form = UserCreationForm()
-    else:
-        # Process complete form
-        form = UserCreationForm(data=request.POST)
 
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordForm(request.user, request.POST)
         if form.is_valid():
-            new_user = form.save()
-            # Log the user and then redirect to home page
-            authenticated_user = authenticate(username=new_user.username, password=request.POST['password1'])
-            login(request, authenticated_user)
-            return HttpResponseRedirect(reverse('inst:index'))
-
-    context = {'form': form}
-    return render(request, 'users/register.html', context)
-"""
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Please correct the error below')
+    else:
+        form = PasswordForm(request.user)
+    return render(request, 'users/password_change.html', {'form': form})

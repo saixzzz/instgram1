@@ -18,7 +18,7 @@ class EditProfileForm(UserChangeForm):
 
         ]
         labels = {'email': 'Email', 'name': 'Full Name', 'web_site': 'Web Site', 'bio': 'Brief info',
-                  'phone_number': 'Phone Number'}
+                  'phone_number': 'Phone Number', 'password': ''}
 
     def clean_password(self):
         return ""

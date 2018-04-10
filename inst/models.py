@@ -26,10 +26,17 @@ class UserSettings(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True)
     web_site = models.CharField(max_length=200, blank=True)
-    bio = models.CharField(max_length=1000, blank=True)
+    bio = models.TextField(blank=True)
     phone_number = models.CharField(max_length=20, blank=True)
     avatar = models.ImageField(upload_to=get_name_and_path(0.5), blank=True, default='Default-image.jpeg')
     email = models.EmailField(blank=True)
 
     def __str__(self):
         return "%s`s settings" % self.user
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=30)
+    body = models.TextField(max_length=2000)
+    date = models.DateTimeField
+    author = models.CharField(max_length=30)
