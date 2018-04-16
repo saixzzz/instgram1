@@ -13,6 +13,6 @@ urlpatterns = [
     # Registration page
     url(r'^register/$', views.register, name='register'),
 
-    url(r'^password/$', views.change_password, name='change_password')
+    url(r'^password/$', views.password_change, name='change_password')
 
 ]

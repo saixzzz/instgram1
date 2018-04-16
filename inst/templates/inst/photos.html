@@ -1,33 +1,36 @@
 {% extends 'inst/base.html' %}
-{% block title %}
-    <title>Photos</title>
-{% endblock %}
+{% block meta %}
+    <link rel="stylesheet" type="text/css" href="/static/feed.css">
+{% endblock meta %}
+
+
 {% block content %}
-    <div class="infinite-container" align="center">
-        {% for photo in photos %}
-            <div class="infinite-item">
-                <span class="photo-span"><img class="photo" src="/media/photos/crop_x1/{{ photo.photo.name }}"></span>
+{% for photo in images %}
+    <section>
+        <div class="container" align="center">
+            {% for usersettings in setting %}
+            <header class="header1 header">
+                <img class="img-circle feed" src="/media/photos/avatar/{{ usersettings.avatar.name }}">
+                <a class="username" href="{{ user.username }}">{{ user.username }}</a>
+            </header>
+            {% endfor%}
+            <span class="photo-span-feed">
+	        	<img class="photo-feed" src="/media/photos/crop_x2/{{ photo.photo.name }}">
+	      </span>
+
+            <div class="bottom-section">
+                <div class="like">
+                    <img class="like-button" src="/static/img/heart.png">
+                    <img class="like-button" src="/static/img/heart.png">
+                </div>
+                <ul class="comments">
+                    <li id="photo-bottom">
+                        <a class="username" href="{{ user.username }} ">{{ user.username }}</a>
+                        <p class="comment" >{{ photo.caption }}</p>
+                    </li>
+                </ul>
             </div>
-        {% endfor %}
-    </div>
-
-    <div class="loading" style="display: none">
-        Loading...
-    </div>
-
-    {% if page_obj.has_next %}
-        <a class="infinite-more-link" href="?page={{ photos.next_page_number }}">More</a>
-    {% endif %}
-
-    <script>
-        var infinite = new Waypoint.Infinite({
-            element: $('.infinite-container')[0],
-            onBeforePageLoad: function () {
-                $('.loading').show();
-            },
-            onAfterPageLoad: function ($items) {
-                $('.loading').hide();
-            }
-        });
-    </script>
+        </div>
+    </section>
+    {% endfor %}
 {% endblock %}

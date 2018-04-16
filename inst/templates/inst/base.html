@@ -14,12 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <link rel="stylesheet" type="text/css" href="/static/login.css">
+    {% block meta %} {% endblock meta %}
     <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header>
@@ -32,16 +34,16 @@
             <div class="navbar-collaps collaps">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                        <li><a href=""><img src="/static/img/compas-icon.png"></a></li>
-                        <li><a href="#"><img src="/static/img/like-icon.png"></a></li>
-                        <li><a href="{% url "inst:profile" %}"><img src="/static/img/profile-icon.png"></a></li>
-                        <li><a href="{% url "inst:upload" %}"><img src="/static/img/upload-icon.png"></a></li>
-                        <li><a href="{% url "users:logout" %}"><span class="glyphicon glyphicon-log-out"></span></a>
+                        <li class="nav-list"><a href="{% url "inst:photos" %}"><img src="/static/img/compas-icon.png"></a></li>
+                        <li class="nav-list"><a href="#"><img src="/static/img/like-icon.png"></a></li>
+                        <li class="nav-list"><a href="{% url "inst:profile" %}"><img src="/static/img/profile-icon.png"></a></li>
+                        <li class="nav-list"><a href="{% url "inst:upload" %}"><img src="/static/img/upload-icon.png"></a></li>
+                        <li class="nav-list"><a href="{% url "users:logout" %}"><span class="glyphicon glyphicon-log-out"></span></a>
                         </li>
                     {% else %}
-                        <li><a href="{% url 'users:register' %}"><span class="glyphicon glyphicon-register"></span>SignUp</a>
+                        <li class="nav-list"><a href="{% url 'users:register' %}"><span class="glyphicon glyphicon-register"></span>SignUp</a>
                         </li>
-                        <li><a href="{% url 'users:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        <li class="nav-list"><a href="{% url 'users:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
                         </li>
                     {% endif %}
                 </ul>

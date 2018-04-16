@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 urlpatterns = [
     url(r'^$', views.index, name='index'),
 
-    url(r'^photos/$', views.Photos.as_view(), name='photos'),
+    url(r'^photos/$', views.photos, name='photos'),
 
     url(r'^user/profile/$', views.profile, name='profile'),
 
@@ -18,8 +18,5 @@ urlpatterns = [
     url(r'^user/profile/upload$', views.upload_file, name='upload'),
 
     url(r'^user/profile/avatar$', views.upload_avatar, name='avatar'),
-
-    url(r'^articles/$', views.article, name='article')
-
 
 ]

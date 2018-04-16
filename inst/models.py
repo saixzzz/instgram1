@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 import time, hashlib, random
-from .assist import ImageCropper
 
 randomname = hashlib.sha1((str(time.time()) + str(random.randrange(0, 9999999999, 1))).encode('utf-8')).hexdigest()
 
@@ -15,8 +14,9 @@ def get_name_and_path(path):
 class Photos(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to='', blank=True, default='Png.png')
-    # comment = models.CharField(max_length=50, blank=True)
-    # like = models.BooleanField
+    caption = models.TextField(max_length=100, blank=True)
+    comment = models.TextField(max_length=200, blank=True)
+    like = models.BooleanField(default=False)
 
     def __str__(self):
         return "%s`s photo" % self.owner

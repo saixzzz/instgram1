@@ -10,10 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -25,7 +23,6 @@ SECRET_KEY = '6$5*+@!w90(%v=cu+jch1tb!feehnglq-kcg8*=6fpwdiid(-4'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -39,6 +36,7 @@ INSTALLED_APPS = [
     'inst',
     'users',
     'bootstrap3',
+
 ]
 
 MIDDLEWARE = [
@@ -52,7 +50,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'instgram1.urls'
-
 
 TEMPLATES = [
     {
@@ -72,7 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'instgram1.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -82,7 +78,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 """
 CACHES = {
@@ -122,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -136,13 +130,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'inst/static')
-
 
 MEDIA_URL = '/media/photos/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/photos/')
@@ -152,4 +144,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/photos/')
 BOOTSTRAP3 = {
     'include_jquery': True
 }
-

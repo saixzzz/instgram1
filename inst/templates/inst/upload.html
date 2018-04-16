@@ -9,6 +9,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="file" name="photo">
+                <input type="text" name="caption">
                 <button type="submit">Upload</button>
             </form>
             <p><a href="{% url 'inst:index' %}">Return to home</a></p>

@@ -23,6 +23,9 @@ class ImageCropper:
         return self.crop(photo, 150, 150)
 
     def crop_x2(self, photo):
+        return self.crop(photo, 300, 300)
+
+    def crop_x3(self, photo):
         return self.crop(photo, 450, 450)
 
     def crop_x05(self, photo):

@@ -1,0 +1,126 @@
+
+.img-circle {
+    max-width: 30px;
+    max-height: 33px;
+    display: inline-flex;
+    float: left;
+    padding-left: 0px;
+}
+
+.photo-feed {
+    max-width: 450px;
+    max-height: 450px;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    object-fit: fill;
+
+}
+.photo-span-feed {
+	display: inline;
+	width: 450px;
+	height: 450px;
+	position: relative;
+}
+
+.header {
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    border: 1px solid #efefef;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-top: 10px;
+    padding-left: 6px;
+    position: relative;
+    width: 450px;
+
+}
+
+.bottom-section {
+    height: 150px;
+    padding: 0 6px;
+    border: 1px solid #efefef;
+    background-color: #fff;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    width: 450px;
+}
+
+.like-button {
+    max-width: 35px;
+    max-height: 35px;
+    display: inline-flex;
+    float: left;
+    padding-left: 0px;
+}
+
+.like {
+    height: 35px;
+    margin-top: 1px;
+    border: 1px solid red;
+    background-color: #fff;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    width: 436px;
+}
+
+.header1 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 60px;
+    padding-top: 14px;
+    background-color: #fff
+}
+
+.comments {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+
+#photo-bottom {
+    width: 400px;
+    height: 20px;
+}
+
+.comment{
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    float: left;
+    padding-left: 7px;
+    padding-top: 5px;
+}
+
+.Username, .Username:visited, .username, .username:visited {
+    font-weight: 600;
+    color: #262626;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    float: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 15px;
+}

@@ -1,7 +1,6 @@
 from .models import UserSettings
 from django import forms
 from django.contrib.auth.forms import UserChangeForm
-from django.forms import ModelForm
 from .models import Photos
 
 
@@ -24,9 +23,8 @@ class EditProfileForm(UserChangeForm):
         return ""
 
 
-class FileForm(forms.ModelForm):
+class EntryForm(forms.ModelForm):
     class Meta:
         model = Photos
-        fields = [
-            'photo',
-        ]
+        fields = ['caption']
+        labels = {'caption': ''}
