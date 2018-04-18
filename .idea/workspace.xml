@@ -1,32 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5258c4a9-a8ec-4322-8a31-1bfe7c2e5457" name="Default" comment="added password change">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inst/migrations/0044_auto_20180410_1017.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inst/migrations/0045_article.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inst/static/feed.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x1/Layer 3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x2/Layer 3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x2/Layer 3_92TDKSi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x2/P7010219 - 1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x2/lesha.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x2/lesha_8nCFR5S.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/photos/crop_x2/photo_2017-12-05_19-39-46.jpg" afterPath="" />
+    <list default="true" id="5258c4a9-a8ec-4322-8a31-1bfe7c2e5457" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inst/static/krasivo.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/assist.py" afterPath="$PROJECT_DIR$/inst/assist.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/forms.py" afterPath="$PROJECT_DIR$/inst/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/models.py" afterPath="$PROJECT_DIR$/inst/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/static/style.css" afterPath="$PROJECT_DIR$/inst/static/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/templates/inst/base.html" afterPath="$PROJECT_DIR$/inst/templates/inst/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/templates/inst/photos.html" afterPath="$PROJECT_DIR$/inst/templates/inst/photos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/templates/inst/upload.html" afterPath="$PROJECT_DIR$/inst/templates/inst/upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/urls.py" afterPath="$PROJECT_DIR$/inst/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/templates/inst/profile.html" afterPath="$PROJECT_DIR$/inst/templates/inst/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inst/views.py" afterPath="$PROJECT_DIR$/inst/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instgram1/settings.py" afterPath="$PROJECT_DIR$/instgram1/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/forms.py" afterPath="$PROJECT_DIR$/users/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/urls.py" afterPath="$PROJECT_DIR$/users/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/views.py" afterPath="$PROJECT_DIR$/users/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/login.html" afterPath="$PROJECT_DIR$/users/templates/users/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/password_change.html" afterPath="$PROJECT_DIR$/users/templates/users/password_change.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/register.html" afterPath="$PROJECT_DIR$/users/templates/users/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,14 +57,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inst/views.py">
+      <file leaf-file-name="photos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inst/templates/inst/photos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="28" column="67" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,22 +76,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inst/templates/inst/upload.html">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inst/templates/inst/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="330">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inst/templates/inst/photos.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inst/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,50 +101,28 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inst/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="10" lean-forward="false" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="10" />
+            <state relative-caret-position="720">
+              <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feed.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inst/static/feed.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inst/templates/inst/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inst/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inst/templates/inst/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+            <state relative-caret-position="451">
+              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="password_change.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/templates/users/password_change.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -221,30 +184,31 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/inst/templates/inst/index.html" />
         <option value="$PROJECT_DIR$/inst/static/login.css" />
-        <option value="$PROJECT_DIR$/users/templates/users/login.html" />
-        <option value="$PROJECT_DIR$/inst/static/style.css" />
         <option value="$PROJECT_DIR$/../python/MyPython/Задания/213.py" />
-        <option value="$PROJECT_DIR$/users/templates/users/password_change.html" />
         <option value="$PROJECT_DIR$/inst/templates/inst/UpdateSettings.html" />
-        <option value="$PROJECT_DIR$/inst/templates/inst/profile.html" />
-        <option value="$PROJECT_DIR$/users/templates/users/register.html" />
         <option value="$PROJECT_DIR$/inst/templates/inst/articles.html" />
         <option value="$PROJECT_DIR$/inst/static/js/waypoint.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/users/forms.py" />
         <option value="$PROJECT_DIR$/users/urls.py" />
-        <option value="$PROJECT_DIR$/inst/urls.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/instgram1/settings.py" />
         <option value="$PROJECT_DIR$/inst/assist.py" />
         <option value="$PROJECT_DIR$/inst/templates/inst/feed.html" />
         <option value="$PROJECT_DIR$/inst/templates/inst/upload.html" />
         <option value="$PROJECT_DIR$/inst/forms.py" />
-        <option value="$PROJECT_DIR$/inst/views.py" />
-        <option value="$PROJECT_DIR$/inst/templates/inst/base.html" />
         <option value="$PROJECT_DIR$/inst/templates/inst/photos.html" />
         <option value="$PROJECT_DIR$/inst/static/feed.css" />
         <option value="$PROJECT_DIR$/inst/models.py" />
+        <option value="$PROJECT_DIR$/inst/urls.py" />
+        <option value="$PROJECT_DIR$/inst/views.py" />
+        <option value="$PROJECT_DIR$/inst/templates/inst/profile.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/password_change.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/login.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/register.html" />
+        <option value="$PROJECT_DIR$/inst/static/style.css" />
+        <option value="$PROJECT_DIR$/inst/static/krasivo.css" />
+        <option value="$PROJECT_DIR$/inst/templates/inst/base.html" />
       </list>
     </option>
   </component>
@@ -336,20 +300,20 @@
             <path>
               <item name="instgram1" type="b2602c69:ProjectViewProjectNode" />
               <item name="instgram1" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instgram1" type="b2602c69:ProjectViewProjectNode" />
               <item name="instgram1" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instgram1" type="b2602c69:ProjectViewProjectNode" />
               <item name="instgram1" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="photos" type="462c0819:PsiDirectoryNode" />
-              <item name="crop_x2" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -533,7 +497,21 @@
       <option name="project" value="LOCAL" />
       <updated>1523373484669</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added password change">
+      <created>1523869782242</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1523869782242</updated>
+    </task>
+    <task id="LOCAL-00007" summary="user profile display">
+      <created>1524031553992</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1524031553992</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -607,7 +585,8 @@
     <MESSAGE value="fixed right upload" />
     <MESSAGE value="fixed pictures display" />
     <MESSAGE value="added password change" />
-    <option name="LAST_COMMIT_MESSAGE" value="added password change" />
+    <MESSAGE value="user profile display" />
+    <option name="LAST_COMMIT_MESSAGE" value="user profile display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,13 +609,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/82a7db3f/5a94442c-d1ab-4ae3-8253-f39cec2a7f4e/main.sqlite_master">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/82a7db3f/5a94442c-d1ab-4ae3-8253-f39cec2a7f4e/main.sqlite_sequence">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -683,13 +655,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/users/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -768,20 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/users/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/users/password_change.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inst/templates/inst/UpdateSettings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -842,29 +793,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instgram1/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inst/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,16 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inst/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inst/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -917,41 +840,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/82a7db3f/5a94442c-d1ab-4ae3-8253-f39cec2a7f4e/main.auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inst/templates/inst/profile.html">
+    <entry file="file://$PROJECT_DIR$/instgram1/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+        <state relative-caret-position="570">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/82a7db3f/5a94442c-d1ab-4ae3-8253-f39cec2a7f4e/main.inst_photos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/inst/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inst/templates/inst/base.html">
+    <entry file="file://$PROJECT_DIR$/inst/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inst/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" column="10" lean-forward="false" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#63#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -963,29 +876,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inst/static/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="7" />
-          <folding />
+    <entry file="das://table:/82a7db3f/5a94442c-d1ab-4ae3-8253-f39cec2a7f4e/main.auth_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82a7db3f/5a94442c-d1ab-4ae3-8253-f39cec2a7f4e/main.inst_photos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inst/templates/inst/photos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+          <caret line="28" column="67" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inst/models.py">
+    <entry file="file://$PROJECT_DIR$/users/templates/users/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inst/templates/inst/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inst/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inst/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/password_change.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inst/static/krasivo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inst/static/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inst/templates/inst/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

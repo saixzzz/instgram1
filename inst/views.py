@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import operator
+from functools import reduce
 from django.shortcuts import render, render_to_response
 from django.views.generic import UpdateView, FormView
 from django.shortcuts import render, redirect, HttpResponseRedirect
@@ -11,6 +13,7 @@ from .forms import EditProfileForm, EntryForm
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
 from instgram1.settings import BASE_DIR
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 
 randomname = hashlib.sha1((str(time.time()) + str(random.randrange(0, 9999999999, 1))).encode('utf-8')).hexdigest()

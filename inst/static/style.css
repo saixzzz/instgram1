@@ -1,115 +1,149 @@
-
 /*.navbar-brand{
     font-family: 'Joesefin Sans', cursive;
 }*/
 .navbar-default {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
+    margin-bottom: 0;
+    border-radius: 0;
+}
 
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 450px}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 450px
+}
 
-    /* Set gray background color and 100% height */
+/* Set gray background color and 100% height */
 
-    /* Set black background color, white text and some padding */
+/* Set black background color, white text and some padding */
 
-    /* On small screens, set height to 'auto' for sidenav and grid */
+/* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
-      .sidenav {
+    .sidenav {
         height: auto;
         padding: 15px;
-      }
-      .row.content {height:auto;}
+    }
+
+    .row.content {
+        height: auto;
+    }
 }
 
 section {
-	background-color: #fafafa
+    background-color: #fafafa
 }
 
 .set-profile {
-	display: inline;
-	border: 2px solid #898989;
-	border-radius: 10px;
-	padding-right: 10px;
-	padding-left: 10px;
+    display: inline;
+    border: 2px solid #898989;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
 
 }
 
-#prof{
-	margin-top: 20px;
+#prof {
+    margin-top: 20px;
 }
 
 .center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	height: 140px;
-	width: 140px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 140px;
+    width: 140px;
 }
 
 .login {
-	text-align: center;
-	font-size: 22px;
-	margin-top: 18px !important;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 18px !important;
 }
 
-.sub-info{
-	list-style-type: none;
-	overflow: hidden;
-	text-align: center;
+.sub-info {
+    list-style-type: none;
+    overflow: hidden;
+    text-align: center;
 }
 
-.sub-info-li{
-	float:left;
-	padding: 16px;
+.sub-info-li {
+    float: left;
+    padding: 16px;
 }
 
-.list-inline{
-	display: block;
-	text-align: center;
-	padding-top: 25px;
-	margin-left: 20px;
+.list-inline {
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    margin-left: 20px;
 }
 
 .name {
-	font-size: 16px;
-	font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.web-site{
-	font-size: 16px;
-	margin-top: 15px;
+.web-site {
+    font-size: 16px;
+    margin-top: 15px;
 }
 
-.bio{
-	margin-top: 15px;
-	width: 300px;
-	line-height: 30px;
+.bio {
+    margin-top: 15px;
+    width: 300px;
+    line-height: 30px;
 }
+
 .photo-span {
-	display: inline;
-	width: 293px;
-	height: 293px;
-	position: relative;
+    display: inline;
+    width: 293px;
+    height: 293px;
+    position: relative;
 }
 
-.photo{
-	max-width: 293px;
-	max-height: 293px;
-	width: auto;
-	height: auto;
-  	padding: 10px;
-  	object-fit: fill;
+.photo {
+    max-width: 293px;
+    max-height: 293px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    object-fit: fill;
 }
-
 
 .container {
-	max-height: auto;
-	max-width: auto;
+    max-height: auto;
+    max-width: auto;
 }
 
-footer{
-	margin: 10px;
-	color: #898989;
+footer {
+    margin: 10px;
+    color: #898989;
+}
+
+.search-label-icon {
+    flex: 0 1 auto;
+    min-width: 125px;
+    width: 215px;
+    height: 28px;
+    position: absolute;
+}
+
+.search {
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    color: #262626;
+    outline: 0;
+    padding: 3px 10px 3px 26px;
+    z-index: 2;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-form .form-control {
+    text-align: center;
+}
+
+.navbar-l{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 280px;
 }

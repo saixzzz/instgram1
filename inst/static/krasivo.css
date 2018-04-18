@@ -1,0 +1,28 @@
+.backname {
+	position: relative;
+	font-family: 'Lobster', cursive;
+	font-size: 90px;
+	opacity: 0.1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.frontname {
+	font-family: 'Lobster', cursive;
+	font-size: 36px;
+	padding-top: 0px;
+	position: absolute;
+	display: block;
+	left: 250px;
+	top: 57px;
+}
+
+.absolute-center {
+	width: 50%;
+	height: 50%;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top :0; left: 0; bottom: 0; right: 0;
+}

@@ -7,7 +7,7 @@
         <div class="container">
             {% for usersettings in setting %}
                 <img src="/media/photos/avatar/{{ usersettings.avatar.name }}" class="img-circle center">
-                <h4 class="login">@{{ user.username }}</h4>
+                <h4 class="login">@{{ usersettings.user }}</h4>
                 <div id="prof" align="center">
                     <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
                         profile</p></a>
@@ -31,7 +31,7 @@
                     <hr>
                 </div>
             {% empty %}
-                <h4 class="login">@{{ user.username }}</h4>
+                <h4 class="login">@{{ usersettings.user }}</h4>
                 <div id="prof" align="center">
                     <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
                         profile</p></a>
@@ -63,7 +63,7 @@
                 <p class="name" align="center"></p>
                 <div align="center">
                     <a class="web-site" href="//"></a>
-                    <p class="bio" align="center"></p>
+                    <p class="bio" align="center">Please set up ur account</p>
                     <hr>
                 </div>
             {% endfor %}
