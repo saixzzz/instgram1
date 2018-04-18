@@ -11,6 +11,8 @@ urlpatterns = [
 
     url(r'^photos/$', views.photos, name='photos'),
 
+    url(r'^(?P<username>[\w]+)$', views.user_profile, name='user_profile'),
+
     url(r'^user/profile/$', views.profile, name='profile'),
 
     url(r'^user/settings/edit$', views.SettingsEdit.as_view(), name='settings_edit'),

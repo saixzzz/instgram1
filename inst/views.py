@@ -30,11 +30,18 @@ def index(request):
 
 @login_required
 def photos(request):
-    """Show all photos"""
+    """Show all feed"""
     photos = Photos.objects.filter(owner=request.user)
     setting = UserSettings.objects.filter(user=request.user)
     context = {'setting': setting, 'images': photos}
     return render(request, 'inst/photos.html', context)
+
+
+def user_profile(request, username):
+    photos = Photos.objects.filter(owner__username=username)
+    setting = UserSettings.objects.filter(user__username=username)
+    context = {'setting': setting, 'images': photos}
+    return render(request, 'inst/profile.html', context)
 
 
 @login_required
