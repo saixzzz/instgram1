@@ -16,11 +16,12 @@
     object-fit: fill;
 
 }
+
 .photo-span-feed {
-	display: inline;
-	width: 450px;
-	height: 450px;
-	position: relative;
+    display: inline;
+    width: 450px;
+    height: 450px;
+    position: relative;
 }
 
 .header {
@@ -73,7 +74,6 @@
 .like {
     height: 35px;
     margin-top: 1px;
-    border: 1px solid red;
     background-color: #fff;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -98,13 +98,12 @@
     list-style-position: outside;
 }
 
-
 #photo-bottom {
     width: 400px;
     height: 20px;
 }
 
-.comment{
+.comment {
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
     flex-grow: 0;
@@ -113,7 +112,7 @@
     padding-top: 5px;
 }
 
-.Username, .Username:visited, .username, .username:visited {
+.username-header, .username-header:visited {
     font-weight: 600;
     color: #262626;
     -webkit-box-flex: 0;
@@ -123,4 +122,13 @@
     padding-left: 10px;
     padding-top: 5px;
     font-size: 15px;
+}
+
+.like-count {
+    text-align: left;
+    display: block;
+}
+
+.username-bottom{
+    margin-left: 5px;
 }

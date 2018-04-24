@@ -140,10 +140,14 @@ footer {
 
 .navbar-form .form-control {
     text-align: center;
+    background-color: #fafafa;
+
 }
 
-.navbar-l{
+.navbar-l {
     display: inline-block;
     margin-top: 15px;
-    margin-left: 280px;
+    margin-bottom: -7px;
+    margin-left: 267px;
 }
+

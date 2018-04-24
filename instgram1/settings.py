@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -35,7 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inst',
     'users',
+
+    # 3rd party apps
     'bootstrap3',
+    'rest_framework',
+    'secretballot',
+    'likes',
 
 ]
 
@@ -47,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'secretballot.middleware.SecretBallotIpUseragentMiddleware',
+    "likes.middleware.SecretBallotUserIpUseragentMiddleware",
 ]
 
 ROOT_URLCONF = 'instgram1.urls'
@@ -66,6 +74,15 @@ TEMPLATES = [
         },
     },
 ]
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 WSGI_APPLICATION = 'instgram1.wsgi.application'
 

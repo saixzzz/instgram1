@@ -26,5 +26,7 @@ class EditProfileForm(UserChangeForm):
 class EntryForm(forms.ModelForm):
     class Meta:
         model = Photos
-        fields = ['caption']
-        labels = {'caption': ''}
+        fields = ['comment']
+        labels = {'comment': ''}
+
+

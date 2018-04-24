@@ -113,3 +113,17 @@ venv.bak/
 out
 gen
 /media
+
+inst/migrations/0046_auto_20180410_1932.py
+inst/migrations/0047_auto_20180410_1953.py
+inst/migrations/0048_auto_20180416_0655.py
+inst/migrations/0049_delete_article.py
+inst/migrations/0050_auto_20180418_2001.py
+inst/migrations/0051_auto_20180418_2031.py
+inst/migrations/0052_userfollowers_followed_at.py
+inst/migrations/0053_auto_20180419_0755.py
+inst/migrations/0054_auto_20180419_0801.py
+inst/migrations/0055_auto_20180419_0808.py
+inst/migrations/0056_auto_20180419_1020.py
+
+/inst/static/img/

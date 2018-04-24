@@ -17,6 +17,7 @@
     {% block meta %} {% endblock meta %}
     <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -31,9 +32,10 @@
                 <a class="navbar-brand" href="{% url "inst:index" %}"><img src="/static/img/logo.png" alt="Fakestagram"></a>
             </div>
         {% if user.is_authenticated %}
-            <form class="navbar-form navbar-l">
-                <div class="">
-                    <input class="form-control" type="text" placeholder="Search">
+            <form method="get" class="navbar-form navbar-l">
+                <div style="">
+                    <input class="form-control" name="q" type="text"  placeholder="Search" value="{{ request.GET.q }}">
+                    <input type="submit" value="Search">
                 </div>
             </form>
         {% endif %}

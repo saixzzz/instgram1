@@ -1,4 +1,3 @@
-
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -10,6 +9,10 @@ urlpatterns = [
     url(r'^users/', include('users.urls', namespace='users')),
 
     url(r'', include('inst.urls', namespace='inst')),
+
+    url(r'^api/', include('rest_framework.urls')),
+
+    url(r'^likes/', include('likes.urls')),
 
 ]
 

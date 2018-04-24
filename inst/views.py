@@ -16,8 +16,6 @@ from instgram1.settings import BASE_DIR
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 
-randomname = hashlib.sha1((str(time.time()) + str(random.randrange(0, 9999999999, 1))).encode('utf-8')).hexdigest()
-
 base_folder = BASE_DIR + '/media/photos/'
 avatar = BASE_DIR + '/media/photos/avatar/'
 base_folder_x1 = BASE_DIR + '/media/photos/crop_x1/'
@@ -47,12 +45,25 @@ def user_profile(request, username):
     return render(request, 'inst/profile.html', context)
 
 
+def change_friends(request, operation, pk):
+    new_friend = Friend.objects.get(pk=pk)
+    if operation == 'add':
+        Friend.make_friend(request.user, new_friend)
+    elif operation == 'rem':
+        Friend.delete_friend(request.user, new_friend)
+
+
 @login_required
 def profile(request):
     """Show all settings"""
     photos = Photos.objects.filter(owner=request.user)
     setting = UserSettings.objects.filter(user=request.user)
-    context = {'setting': setting, 'images': photos}
+    try:
+        friend = Friend.objects.get(current_user=request.user)
+        friends = friend.users.all()
+    except Friend.DoesNotExist:
+        friends = None
+    context = {'setting': setting, 'images': photos, 'friends': friends}
     return render(request, 'inst/profile.html', context)
 
 

@@ -1,4 +1,5 @@
 {% extends 'inst/base.html' %}
+{% load likes_inclusion_tags %}
 {% block meta %}
     <link rel="stylesheet" type="text/css" href="/static/feed.css">
 {% endblock meta %}
@@ -11,7 +12,7 @@
             {% for usersettings in setting %}
             <header class="header1 header">
                 <img class="img-circle feed" src="/media/photos/avatar/{{ usersettings.avatar.name }}">
-                <a class="username" href="{{ user.username }}">{{ user.username }}</a>
+                <a class="username-header" href="{{ user.username }}">{{ user.username }}</a>
             </header>
             {% endfor%}
             <span class="photo-span-feed">
@@ -23,12 +24,13 @@
                     <img class="like-button" src="/static/img/heart.png">
                     <img class="like-button" src="/static/img/heart.png">
                 </div>
-                <ul class="comments">
-                    <li id="photo-bottom">
-                        <a class="username" href="{{ user.username }} ">{{ user.username }}</a>
-                        <p class="comment" >{{ photo.caption }}</p>
-                    </li>
-                </ul>
+
+                <div class="like-count">
+                    <p>Likes: {{ photo.likes.count }}</p>
+                </div>
+                <div class="like-count">
+                    <p>{{ user.username }}: {{ photo.caption }}</p>
+                </div>
             </div>
         </div>
     </section>
