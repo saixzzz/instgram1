@@ -2,6 +2,11 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.fields import GenericRelation
+from django.contrib.contenttypes.models import ContentType
+
+from liked.models import Like
+
 
 def get_name_and_path():
     pass
@@ -12,10 +17,14 @@ class Photos(models.Model):
     photo = models.ImageField(upload_to='', blank=True, default='Png.png')
     caption = models.TextField(max_length=100, blank=True)
     comment = models.TextField(max_length=200, blank=True)
-    like = models.BooleanField(default=False)
+    likes = GenericRelation(Like)
 
     def __str__(self):
         return "%s`s photo" % self.owner
+
+    @property
+    def likes_count(self):
+        return self.likes.count()
 
 
 class UserSettings(models.Model):

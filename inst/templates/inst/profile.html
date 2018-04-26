@@ -8,6 +8,17 @@
             {% for usersettings in setting %}
                 <img src="/media/photos/avatar/{{ usersettings.avatar.name }}" class="img-circle center">
                 <h4 class="login">@{{ usersettings.user }}</h4>
+                <div class="login">
+                {% if not user in friends %}
+                    <a href="{% url 'inst:change_friends' operation='add' pk=usersettings.user.pk %}">
+                        <button type="button" class="btn btn-default">Add friend</button>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'inst:change_friends' operation='rem' pk=usersettings.user.pk %}">
+                        <button type="button" class="btn btn-default">Remove friend</button>
+                    </a>
+                {% endif %}
+                </div>
                 <div id="prof" align="center">
                     <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
                         profile</p></a>

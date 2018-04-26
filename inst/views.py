@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
-import operator
-from functools import reduce
-from django.shortcuts import render, render_to_response
-from django.views.generic import UpdateView, FormView
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.views.generic import UpdateView, ListView
 from django.core.urlresolvers import reverse
@@ -46,11 +43,12 @@ def user_profile(request, username):
 
 
 def change_friends(request, operation, pk):
-    new_friend = Friend.objects.get(pk=pk)
+    new_friend = User.objects.get(pk=pk)
     if operation == 'add':
         Friend.make_friend(request.user, new_friend)
     elif operation == 'rem':
         Friend.delete_friend(request.user, new_friend)
+    return redirect('inst:profile')
 
 
 @login_required
@@ -72,14 +70,20 @@ def upload_file(request):
     if request.method == 'POST' and request.FILES['photo']:
         caption = request.POST['caption']
         myfile = request.FILES['photo']
+
+        # saves uploaded file
         fs = FileSystemStorage()
         filename1 = fs.save(base_folder_x1 + myfile.name, myfile)
         filename2 = fs.save(base_folder_x2 + myfile.name, myfile)
         filename3 = fs.save(base_folder_x3 + myfile.name, myfile)
+
+        # crops uploaded image to 3 presets
         cropper = ImageCropper()
         cropper.crop_x1(filename1)
         cropper.crop_x2(filename2)
         cropper.crop_x3(filename3)
+
+        # saving filename to database
         instance = Photos(photo=myfile.name, owner=request.user, caption=caption)
         instance.save()
         uploaded_file_url = fs.url(myfile)
@@ -90,7 +94,6 @@ def upload_file(request):
 @login_required
 def upload_avatar(request):
     if request.method == 'POST' and request.FILES['photo']:
-
         myfile = request.FILES['photo']
         fs = FileSystemStorage()
         filename = fs.save(avatar + myfile.name, myfile)

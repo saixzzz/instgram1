@@ -36,12 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inst',
     'users',
+    'liked',
 
     # 3rd party apps
     'bootstrap3',
     'rest_framework',
     'secretballot',
-    'likes',
 
 ]
 
@@ -74,7 +74,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
