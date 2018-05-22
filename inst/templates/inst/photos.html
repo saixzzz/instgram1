@@ -1,38 +1,36 @@
 {% extends 'inst/base.html' %}
-{% load likes_inclusion_tags %}
 {% block meta %}
     <link rel="stylesheet" type="text/css" href="/static/feed.css">
 {% endblock meta %}
 
 
 {% block content %}
-{% for photo in images %}
-    <section>
-        <div class="container" align="center">
-            {% for usersettings in setting %}
-            <header class="header1 header">
-                <img class="img-circle feed" src="/media/photos/avatar/{{ usersettings.avatar.name }}">
-                <a class="username-header" href="{{ user.username }}">{{ user.username }}</a>
-            </header>
-            {% endfor%}
-            <span class="photo-span-feed">
+    {% for photo in images %}
+        <section>
+            <div class="container" align="center">
+                {% for usersettings in setting %}
+                    <header class="header1 header">
+                        <img class="img-circle feed" src="/media/photos/avatar/{{ usersettings.avatar.name }}">
+                        <a class="username-header" href="{{ user.username }}">{{ user.username }}</a>
+                    </header>
+                {% endfor %}
+                <span class="photo-span-feed">
 	        	<img class="photo-feed" src="/media/photos/crop_x2/{{ photo.photo.name }}">
 	      </span>
+                <div class="bottom-section">
+                    <div class="like">
+                        <img class="like-button" src="/static/img/heart.png">
+                        <img class="like-button" src="/static/img/heart.png">
+                    </div>
 
-            <div class="bottom-section">
-                <div class="like">
-                    <img class="like-button" src="/static/img/heart.png">
-                    <img class="like-button" src="/static/img/heart.png">
-                </div>
-
-                <div class="like-count">
-                    <p>Likes: {{ photo.likes.count }}</p>
-                </div>
-                <div class="like-count">
-                    <p>{{ user.username }}: {{ photo.caption }}</p>
+                    <div class="like-count">
+                        <p>Likes: {{ photo.likes.count }}</p>
+                    </div>
+                    <div class="like-count">
+                        <p>{{ user.username }}: {{ photo.caption }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     {% endfor %}
 {% endblock %}

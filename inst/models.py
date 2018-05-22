@@ -4,26 +4,28 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.contenttypes.models import ContentType
-
+from django.core.urlresolvers import reverse_lazy
 from liked.models import Like
-
-
-def get_name_and_path():
-    pass
 
 
 class Photos(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to='', blank=True, default='Png.png')
+    photo = models.ImageField(blank=True, default='Png.png')
     caption = models.TextField(max_length=100, blank=True)
     comment = models.TextField(max_length=200, blank=True)
     likes = GenericRelation(Like)
 
+    class Meta:
+        verbose_name_plural = "Photos"
+
     def __str__(self):
         return "%s`s photo" % self.owner
 
+    def get_absolute_url(self):
+        return reverse_lazy("inst:profile", kwargs={'username': self.owner.username})
+
     @property
-    def likes_count(self):
+    def total_likes(self):
         return self.likes.count()
 
 
@@ -36,20 +38,24 @@ class UserSettings(models.Model):
     avatar = models.ImageField(blank=True, default='Default-image.jpeg')
     email = models.EmailField(blank=True)
 
+    class Meta:
+        verbose_name_plural = "UserSettings"
+
     def __str__(self):
-        return "%s`s settings" % self.user
+        return self.user.username
 
 
 class Friend(models.Model):
-    users = models.ManyToManyField(User)
-    current_user = models.ForeignKey(User, related_name='owner', null=True)
+    to_friend = models.ForeignKey(User)
+    from_friend = models.ForeignKey(User, related_name='owner', null=True)
+    amont = models.PositiveIntegerField()
 
-    @classmethod
-    def make_friend(cls, current_user, new_friend):
-        friend, created = cls.objects.get_or_create(current_user=current_user)
-        friend.users.add(new_friend)
+    class Meta:
+        unique_together = ('to_friend', 'from_friend')
 
-    @classmethod
-    def delete_friend(cls, current_user, new_friend):
-        friend, created = cls.objects.get_or_create(current_user=current_user)
-        friend.users.remove(new_friend)
+    def __str__(self):
+        return '{} to {}'.format(self.from_friend, self.to_friend)
+
+    def save(self, *args, **kwargs):
+        # self.amont += 1
+        super(Friend, self).save(*args, **kwargs)

@@ -10,9 +10,7 @@ urlpatterns = [
 
     url(r'', include('inst.urls', namespace='inst')),
 
-    url(r'^api/', include('rest_framework.urls')),
-
-    url(r'^likes/', include('likes.urls')),
+    # url(r'^api/', include('rest_framework.urls')),
 
 ]
 

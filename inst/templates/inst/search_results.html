@@ -3,7 +3,13 @@
 {% block content %}
     <section>
         <div class="container">
-
+            <ul>
+                {% for user in search %}
+                <li>
+                    <a href="{{ user.username }}">{{ user.usename }}</a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </section>
 {% endblock content %}

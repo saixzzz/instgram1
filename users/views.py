@@ -34,7 +34,7 @@ def login_view(request):
 
 def register(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = SignUpForm(data=request.POST)
         if form.is_valid():
             form.save()
             new_user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'])

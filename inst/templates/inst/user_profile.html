@@ -1,0 +1,109 @@
+{% extends 'inst/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <body>
+    <section>
+        <hr>
+        <div class="container">
+            {% for setting in user_setting %}
+                <img src="/media/photos/avatar/{{ setting.avatar.name }}" class="img-circle center">
+
+                <h4 class="login">@{{ user_name }}</h4>
+                <div class="login">
+
+
+                    <a href="{% url 'inst:change_friends' pk=user_name %}">
+                        <button type="button" class="btn btn-default">Add friend</button>
+                    </a>
+
+                    <a href="{% url 'inst:change_friends' pk=user_name %}">
+                        <button type="button" class="btn btn-default">Remove friend</button>
+                    </a>
+                </div>
+                <div id="prof" align="center">
+                    <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
+                        profile</p></a>
+                </div>
+                <ul class="list-inline">
+                    <li><b>9</b> posts</li>
+                    <li>
+                        <spacer type="block" size="200"></spacer>
+                    </li>
+                    <li><b>150</b> following</li>
+                    <li>
+                        <spacer type="block" size="200"></spacer>
+                    </li>
+                    <li><b>0</b> followers</li>
+                </ul>
+                <hr>
+                <p class="name" align="center">{{ setting.name }}</p>
+                <div align="center">
+                    <a class="web-site" href="//{{ setting.web_site }}">{{ setting.web_site }}</a>
+                    <p class="bio" align="center">{{ setting.bio }}</p>
+                    <hr>
+                </div>
+            {% empty %}
+                <img src="/media/photos/avatar/Default-image.jpeg" class="img-circle center">
+                <h4 class="login">@{{ user_name }}</h4>
+                <div class="login">
+
+                    <a href="{% url 'inst:change_friends' pk=user_id %}">
+                        <button type="button" class="btn btn-default">Add friend</button>
+                    </a>
+
+                    <a href="#">
+                        <button type="button" class="btn btn-default">Remove friend</button>
+                    </a>
+                </div>
+                <ul class="list-inline">
+                    <li><b>9</b> posts</li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li><b>150</b> following</li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li>
+                        <spacer type="horizontal" size="60"></spacer>
+                    </li>
+                    <li><b>200</b> subscribed</li>
+                </ul>
+                <hr>
+                <p class="name" align="center"></p>
+                <div align="center">
+                    <a class="web-site" href="//"></a>
+                    <p class="bio" align="center">Please set up ur account</p>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section>
+        <div class="container" align="center">
+            {% for image in images %}
+                <span class="photo-span"><img class="photo" src="/media/photos/crop_x1/{{ image.photo.name }}"></span>
+                {% empty %}
+                <span class="photo-span"><img class="photo" src="/media/photos/crop_x1/Png.png"></span>
+            {% endfor %}
+        </div>
+        <hr>
+    </section>
+
+    <footer style="margin: 10px; color: #898989">
+        <div class="container" align="center">
+            <p class="footer">© Desiged and Produced by Sergio and Michael</p>
+        </div>
+    </footer>
+    </body>
+    </html>
+{% endblock content %}

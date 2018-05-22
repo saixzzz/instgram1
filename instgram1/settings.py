@@ -37,13 +37,17 @@ INSTALLED_APPS = [
     'inst',
     'users',
     'liked',
+    'location',
 
     # 3rd party apps
     'bootstrap3',
     'rest_framework',
     'secretballot',
+    'cities_light'
 
 ]
+
+CITIES_LIGHT_APP_NAME = 'location'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,7 +136,35 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'loggers': {
+        'cities_light': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        # also use this one to see SQL queries
+        'django': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 

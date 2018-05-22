@@ -1,17 +1,18 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import unicode_literals
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.views.generic import UpdateView, ListView
 from django.core.urlresolvers import reverse
-from .models import *
-from .assist import ImageCropper
-from .forms import EditProfileForm, EntryForm
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
+from django.contrib import messages
+from django.db.models import Count, Prefetch
+
+from .models import UserSettings, Photos, Friend
+from .forms import EditProfileForm, EntryForm
 from instgram1.settings import BASE_DIR
-from django.db.models import Q
-from django.http import HttpResponseRedirect
+
+from .services import ImageCropper
 
 base_folder = BASE_DIR + '/media/photos/'
 avatar = BASE_DIR + '/media/photos/avatar/'
@@ -26,6 +27,15 @@ def index(request):
     return render(request, template_name)
 
 
+def friendsleaderb(request):
+    query = Prefetch('friend_set', Friend.objects.distinct())
+    count = User.objects.prefetch_related(query).annotate(number_of_friends=Count('friend'))
+    users = User.objects.all().order_by()
+    #friends = Friend.objects.all()
+    context = {'users': users}
+    return render(request, 'inst/top.html', context)
+
+
 @login_required
 def photos(request):
     """Show all feed"""
@@ -36,19 +46,30 @@ def photos(request):
 
 
 def user_profile(request, username):
+    username = username.title()
     photos = Photos.objects.filter(owner__username=username)
     setting = UserSettings.objects.filter(user__username=username)
-    context = {'setting': setting, 'images': photos}
-    return render(request, 'inst/profile.html', context)
+    user_id = User.objects.get(username=username).id
+    context = {'user_setting': setting, 'images': photos, 'user_name': username, 'user_id': user_id, 'friendships': ''}
+    return render(request, 'inst/user_profile.html', context)
 
 
-def change_friends(request, operation, pk):
-    new_friend = User.objects.get(pk=pk)
-    if operation == 'add':
-        Friend.make_friend(request.user, new_friend)
-    elif operation == 'rem':
-        Friend.delete_friend(request.user, new_friend)
-    return redirect('inst:profile')
+def add_or_remove_friend(request, pk):
+    new_friend = User.objects.get(id=pk)
+    friendship = Friend(to_friend=new_friend, from_friend=request.user, amont=+1)
+    friendship.save()
+    return redirect('inst:index')
+
+
+"""
+def search(request):
+    if request.method == "GET":
+        query = request.GET.get("q", None)
+        if query is not None:
+            searched = User.objects.filter(username__icontains=query)
+            context = {'user': searched}
+        return render(request, 'inst/search_results.html', context)
+"""
 
 
 @login_required
@@ -56,20 +77,15 @@ def profile(request):
     """Show all settings"""
     photos = Photos.objects.filter(owner=request.user)
     setting = UserSettings.objects.filter(user=request.user)
-    try:
-        friend = Friend.objects.get(current_user=request.user)
-        friends = friend.users.all()
-    except Friend.DoesNotExist:
-        friends = None
-    context = {'setting': setting, 'images': photos, 'friends': friends}
+    context = {'setting': setting, 'images': photos, 'user_name': request.user}
     return render(request, 'inst/profile.html', context)
 
 
 @login_required
 def upload_file(request):
-    if request.method == 'POST' and request.FILES['photo']:
-        caption = request.POST['caption']
-        myfile = request.FILES['photo']
+    if request.method == 'POST' and request.FILES.get('photo'):
+        caption = request.POST.get('caption')
+        myfile = request.FILES.get('photo')
 
         # saves uploaded file
         fs = FileSystemStorage()

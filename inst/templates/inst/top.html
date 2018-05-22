@@ -1,0 +1,22 @@
+{% extends 'inst/base.html' %}
+{% load inst_tags %}
+{% block title %}
+    <title>Top</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+            <ul style="list-style-type: none">
+                {% for user in users %}
+                    <li style="text-align: center">{{ user }} has {{ user.friend_set.count }} friendships</li>
+                    <hr>
+                {% endfor %}
+            </ul>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+{% endblock %}

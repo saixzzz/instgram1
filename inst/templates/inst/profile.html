@@ -7,22 +7,12 @@
         <div class="container">
             {% for usersettings in setting %}
                 <img src="/media/photos/avatar/{{ usersettings.avatar.name }}" class="img-circle center">
-                <h4 class="login">@{{ usersettings.user }}</h4>
-                <div class="login">
-                {% if not user in friends %}
-                    <a href="{% url 'inst:change_friends' operation='add' pk=usersettings.user.pk %}">
-                        <button type="button" class="btn btn-default">Add friend</button>
-                    </a>
-                    {% else %}
-                    <a href="{% url 'inst:change_friends' operation='rem' pk=usersettings.user.pk %}">
-                        <button type="button" class="btn btn-default">Remove friend</button>
-                    </a>
-                {% endif %}
-                </div>
+                <h4 class="login">@{{ user_name }}</h4>
                 <div id="prof" align="center">
                     <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
                         profile</p></a>
                 </div>
+                {% for friend in friends %}
                 <ul class="list-inline">
                     <li><b>9</b> posts</li>
                     <li>
@@ -32,8 +22,14 @@
                     <li>
                         <spacer type="block" size="200"></spacer>
                     </li>
-                    <li><b>200</b> followers</li>
+                    {% if friend.users is empty %}
+                    <li><b>0</b> followers</li>
                 </ul>
+                    {% else %}
+                       <li><b>{{ friend.users.countt }}</b> followers</li>
+                    {% endif %}
+
+                    {% endfor %}
                 <hr>
                 <p class="name" align="center">{{ usersettings.name }}</p>
                 <div align="center">
@@ -42,7 +38,8 @@
                     <hr>
                 </div>
             {% empty %}
-                <h4 class="login">@{{ usersettings.user }}</h4>
+                <img src="/media/photos/avatar/Default-image.jpeg" class="img-circle center">
+                <h4 class="login">@{{ user_name}}</h4>
                 <div id="prof" align="center">
                     <a class="set-p-style" href="{% url "inst:settings_edit" %}"><p class="set-profile">Set your
                         profile</p></a>
@@ -84,6 +81,8 @@
         <div class="container" align="center">
             {% for image in images %}
                 <span class="photo-span"><img class="photo" src="/media/photos/crop_x1/{{ image.photo.name }}"></span>
+                {% empty %}
+                <span class="photo-span"><img class="photo" src="/media/photos/crop_x1/Png.png"></span>
             {% endfor %}
         </div>
         <hr>

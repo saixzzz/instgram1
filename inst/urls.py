@@ -15,7 +15,7 @@ urlpatterns = [
     # url(r'^api/photos/like$', views.PostLikeToggle.as_view(), name='like-api-toggle'),
 
     # Displays users profile
-    url(r'^(?P<username>[\w]+)$', views.user_profile, name='user_profile'),
+    url(r'^u/(?P<username>[\w]+)$', views.user_profile, name='user_profile'),
 
     # Displays your own profile
     url(r'^user/profile/$', views.profile, name='profile'),
@@ -29,6 +29,10 @@ urlpatterns = [
     # avatar upload function
     url(r'^user/profile/avatar$', views.upload_avatar, name='avatar'),
 
-    url(r'^connect/(?P<operation>.+)/(?P<pk>\d+)', views.change_friends, name='change_friends')
+    url(r'^connect/(?P<pk>\d+)', views.add_or_remove_friend, name='change_friends'),
+
+    url(r'^top/$', views.friendsleaderb, name='top')
+
+    # url(r'^results$', views.search, name='search_results'),
 
 ]

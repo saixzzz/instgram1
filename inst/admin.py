@@ -4,8 +4,7 @@ from .models import *
 from django.contrib import admin
 from sorl.thumbnail.admin import AdminImageMixin
 
-
-# Register your models here.
+# Register your models here
 admin.site.register(Photos)
 admin.site.register(UserSettings)
 admin.site.register(Friend)
@@ -13,4 +12,3 @@ admin.site.register(Friend)
 
 class PhotosAdmin(AdminImageMixin, admin.ModelAdmin):
     pass
-

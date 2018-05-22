@@ -31,14 +31,15 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="{% url "inst:index" %}"><img src="/static/img/logo.png" alt="Fakestagram"></a>
             </div>
-        {% if user.is_authenticated %}
-            <form method="get" class="navbar-form navbar-l">
-                <div style="">
-                    <input class="form-control" name="q" type="text"  placeholder="Search" value="{{ request.GET.q }}">
-                    <input type="submit" value="Search">
-                </div>
-            </form>
-        {% endif %}
+            {% if user.is_authenticated %}
+                <form method="get" class="navbar-form navbar-l">
+                    <div style="">
+                        <input class="form-control" name="q" type="text" placeholder="Search"
+                               value="{{ request.GET.q }}">
+                        <input type="submit" value="Search">
+                    </div>
+                </form>
+            {% endif %}
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li class="nav-list"><a href="{% url "inst:photos" %}"><img

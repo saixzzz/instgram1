@@ -11,10 +11,10 @@
 .frontname {
 	font-family: 'Lobster', cursive;
 	font-size: 36px;
-	padding-top: 0px;
+	padding-top: 0;
 	position: absolute;
 	display: block;
-	left: 250px;
+	left: 290px;
 	top: 57px;
 }
 

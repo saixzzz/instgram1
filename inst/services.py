@@ -1,9 +1,10 @@
 from PIL import Image
-import shutil, os
 
 
 class ImageCropper:
-
+    """
+    Crops original photo to 3 given sizes
+    """
     def crop(self, photo, width, height):
         img = Image.open(photo)
         half_the_width = img.size[0] / 2
@@ -30,14 +31,3 @@ class ImageCropper:
 
     def crop_x05(self, photo):
         return self.crop(photo, 75, 75)
-
-
-source = '/Users/user/PycharmProjects/instgram1/media/photos/'
-
-destination = '/Users/user/PycharmProjects/instgram1/media/photos/crop_x1'
-"""
-for files in os.listdir(source):
-    if files.endswith('.png' or '.jpg' or '.jpeg' or '.gif'):
-        cropper = ImageCropper()
-        cropped = cropper.crop_x1(source + files)
-"""
