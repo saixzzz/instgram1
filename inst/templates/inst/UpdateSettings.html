@@ -2,11 +2,31 @@
 
 {% block content %}
     <div class="container">
-        <form method="post">
+        <form id='personForm' method="post" data-cities-url="{% url 'inst:ajax_load_cities' %}" novalidate>
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Save</button>
+            <a class="btn btn-default" href="{% url 'inst:profile' %}">Nevermind</a>
         </form>
         <!--  -->
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#id_country").change(function () {
+            var url = $("#personForm").attr("data-cities-url");
+            var countryId = $(this).val();
+
+            $.ajax({
+                url: url,
+                data: {
+                    'country': countryId
+                },
+                success: function (data) {
+                    $("#id_city").html(data);
+                }
+            });
+
+        });
+    </script>
 {% endblock %}

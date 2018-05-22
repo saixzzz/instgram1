@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     'rest_framework',
     'secretballot',
-    'cities_light'
+    'cities_light',
+    'smart_selects',
 
 ]
 

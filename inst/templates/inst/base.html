@@ -44,7 +44,7 @@
                 {% if user.is_authenticated %}
                     <li class="nav-list"><a href="{% url "inst:photos" %}"><img
                             src="/static/img/compas-icon.png"></a></li>
-                    <li class="nav-list"><a href="#"><img src="/static/img/like-icon.png"></a></li>
+                    <li class="nav-list"><a href="{% url 'inst:top' %}"><img src="/static/img/like-icon.png"></a></li>
                     <li class="nav-list"><a href="{% url "inst:profile" %}"><img
                             src="/static/img/profile-icon.png"></a>
                     </li>

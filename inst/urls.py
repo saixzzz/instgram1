@@ -31,7 +31,9 @@ urlpatterns = [
 
     url(r'^connect/(?P<pk>\d+)', views.add_or_remove_friend, name='change_friends'),
 
-    url(r'^top/$', views.friendsleaderb, name='top')
+    url(r'^top/$', views.friendsleaderb, name='top'),
+
+    url('ajax/load-cities/', views.load_cities, name='ajax_load_cities'),
 
     # url(r'^results$', views.search, name='search_results'),
 

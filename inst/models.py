@@ -6,6 +6,9 @@ from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse_lazy
 from liked.models import Like
+from location.models import Country, City
+
+from smart_selects.db_fields import ChainedForeignKey
 
 
 class Photos(models.Model):
@@ -37,6 +40,8 @@ class UserSettings(models.Model):
     phone_number = models.CharField(max_length=20, blank=True)
     avatar = models.ImageField(blank=True, default='Default-image.jpeg')
     email = models.EmailField(blank=True)
+    country = models.ForeignKey(Country, blank=True, null=True)
+    city = ChainedForeignKey(City, chained_field='country', chained_model_field='country' ,blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "UserSettings"

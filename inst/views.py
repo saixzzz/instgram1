@@ -13,6 +13,7 @@ from .forms import EditProfileForm, EntryForm
 from instgram1.settings import BASE_DIR
 
 from .services import ImageCropper
+from location.models import City, Country
 
 base_folder = BASE_DIR + '/media/photos/'
 avatar = BASE_DIR + '/media/photos/avatar/'
@@ -31,7 +32,7 @@ def friendsleaderb(request):
     query = Prefetch('friend_set', Friend.objects.distinct())
     count = User.objects.prefetch_related(query).annotate(number_of_friends=Count('friend'))
     users = User.objects.all().order_by()
-    #friends = Friend.objects.all()
+    # friends = Friend.objects.all()
     context = {'users': users}
     return render(request, 'inst/top.html', context)
 
@@ -127,8 +128,16 @@ class SettingsEdit(UpdateView):
     form_class = EditProfileForm
 
     def get_object(self, queryset=None):
-        setting = UserSettings.objects.get(user=self.request.user)
+        user = self.request.user
+        setting = UserSettings.objects.get(user=user)
         return setting
 
     def get_success_url(self):
         return reverse('inst:profile')
+
+
+def load_cities(request):
+    country = request.GET.get('country')
+    cities = City.objects.filter(country__exact=country).order_by('name')
+    context = {'cities': cities}
+    return render(request, 'inst/city_dropdown_list_options.html', context)

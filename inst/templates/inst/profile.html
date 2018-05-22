@@ -22,16 +22,11 @@
                     <li>
                         <spacer type="block" size="200"></spacer>
                     </li>
-                    {% if friend.users is empty %}
-                    <li><b>0</b> followers</li>
-                </ul>
-                    {% else %}
-                       <li><b>{{ friend.users.countt }}</b> followers</li>
-                    {% endif %}
 
                     {% endfor %}
                 <hr>
                 <p class="name" align="center">{{ usersettings.name }}</p>
+                <p class="name" align="center">{{ usersettings.city }}</p>
                 <div align="center">
                     <a class="web-site" href="//{{ usersettings.web_site }}">{{ usersettings.web_site }}</a>
                     <p class="bio" align="center">{{ usersettings.bio }}</p>

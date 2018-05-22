@@ -1,6 +1,7 @@
 from .models import UserSettings
 from django import forms
 from .models import Photos
+from location.models import City
 
 
 class EditProfileForm(forms.ModelForm):
@@ -12,10 +13,12 @@ class EditProfileForm(forms.ModelForm):
             'web_site',
             'bio',
             'phone_number',
+            'country',
+            'city',
 
         ]
         labels = {'email': 'Email', 'name': 'Full Name', 'web_site': 'Web Site', 'bio': 'Brief info',
-                  'phone_number': 'Phone Number',}
+                  'phone_number': 'Phone Number', }
 
 
 class EntryForm(forms.ModelForm):
@@ -23,5 +26,3 @@ class EntryForm(forms.ModelForm):
         model = Photos
         fields = ['comment']
         labels = {'comment': ''}
-
-

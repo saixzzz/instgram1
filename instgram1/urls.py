@@ -10,6 +10,8 @@ urlpatterns = [
 
     url(r'', include('inst.urls', namespace='inst')),
 
+    url(r'^chaining/', include('smart_selects.urls')),
+
     # url(r'^api/', include('rest_framework.urls')),
 
 ]
